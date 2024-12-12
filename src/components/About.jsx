@@ -33,11 +33,11 @@ const About = () => {
           Welcome to zentry{" "}
         </p>
 
-        <AnimatedTitle />
+        <AnimatedTitle
+          title="Disc<b>o</b>ver the World's <br /> l<b>a</b>rgest shared adventure."
+          containerClass="mt-5 text-center text-4xl uppercase leading-[0.8] md:text-[6rem]"
+        />
 
-        <div className=" mt-5 text-center text-4xl uppercase leading-[0.8] md:text-[6rem]">
-          Disc<b>o</b>ver the World's <br /> l<b>a</b>rgest shared adventure.
-        </div>
 
         <div className=" about-subtext">
           <p>The game of GAMES begins-your life now an epic MMORPG</p>
