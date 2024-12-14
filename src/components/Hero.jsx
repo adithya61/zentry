@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
+  const [prevIndex, setPrevIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
 
   const [loading, setLoading] = useState(true);
@@ -31,6 +32,8 @@ const Hero = () => {
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
+
+    setPrevIndex(currentIndex);
 
     setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
   };
@@ -107,8 +110,7 @@ const Hero = () => {
             <VideoPreview>
               <div
                 onClick={handleMiniVdClick}
-                className="origin-center
-                 scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+                className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
               >
                 <video
                   ref={nextVdRef}
@@ -125,7 +127,9 @@ const Hero = () => {
 
           <video
             ref={nextVdRef}
-            src={getVideoSrc(currentIndex)}
+            src={getVideoSrc(
+              currentIndex === totalVideos - 1 ? 1 : currentIndex
+            )}
             loop
             muted
             id="next-video"
