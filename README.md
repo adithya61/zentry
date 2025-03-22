@@ -69,7 +69,7 @@ npm install
 ---
 4. **Start the Development Server**:
 ```
-npm start
+npm start dev
 ```
 ---
 
